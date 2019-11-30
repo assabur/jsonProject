@@ -42,7 +42,7 @@ public class Convertisseur
 			
 	}
 	
-	public void to_json()
+	public void to_json(String chemin)
 	{
 		
 		try 
@@ -51,7 +51,7 @@ public class Convertisseur
 			CsvMapper csvMapper = new CsvMapper();
 			MappingIterator<OrderLine> orderLines = csvMapper.readerFor(OrderLine.class)
 			  .with(orderLineSchema)
-			  .readValues(new File("F:/EclipseProjects/json2csv/src/main/ressources/Fichier_Csv"));
+			  .readValues(new File(chemin));
 			
 			
 			new ObjectMapper()

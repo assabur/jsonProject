@@ -25,19 +25,19 @@ public class Main {
 			    		Convertisseur converter =new Convertisseur();	    		
 			    		converter.to_csv(chemin);
 			    		System.out.println("Operation terminée");
-			    		Show.suite();
+			    		
 			    		test= Show.suite();
 	        	 }
 	            break; 
 	        case 2:
 	        	{	   
-			    	   /* System.out.println("Entrez le chemin absolu du fichier CSV");			    		
+			    	    System.out.println("Entrez le chemin absolu du fichier CSV");			    		
 			    		sc =new Scanner(System.in);		
-			    		String chemin=sc.nextLine();	*/	
+			    		String chemin=sc.nextLine();	
 			    		Convertisseur converter =new Convertisseur();	    		
-			    		converter.to_json();
+			    		converter.to_json(chemin);
 			    		System.out.println("Operation terminée");
-			    		Show.suite();
+			    		
 			    		test= Show.suite();
 	        	}
 	            break;
@@ -47,7 +47,7 @@ public class Main {
 	       
 	        default:
 			        	System.out.println("Votre choix ne se trouve pas dans le menu/n! ");
-			        	Show.suite();
+			        	
 			    		test= Show.suite();
 		
 	    }
