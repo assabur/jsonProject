@@ -16,7 +16,7 @@ public class Convertisseur
 
    
 	
-	/*public void to_csv (String chemin) 
+	  public void to_csv (String chemin) 
 	{
 		
 		try {
@@ -40,9 +40,9 @@ public class Convertisseur
 			e.printStackTrace();
 		}
 			
-	}*/
+	}
 	
-	public void to_json(String chemin)
+	public void to_json()
 	{
 		
 		try 
@@ -51,19 +51,18 @@ public class Convertisseur
 			CsvMapper csvMapper = new CsvMapper();
 			MappingIterator<OrderLine> orderLines = csvMapper.readerFor(OrderLine.class)
 			  .with(orderLineSchema)
-			  .readValues(new File(‪"src/main/ressources/Fichier_Csv"));
+			  .readValues(new File("F:/EclipseProjects/json2csv/src/main/ressources/Fichier_Csv"));
 			
 			
 			new ObjectMapper()
 			  .configure(SerializationFeature.INDENT_OUTPUT, true)
-			  .writeValue(new File(""), orderLines.readAll());
+			  .writeValue(new File("src/main/ressources/Fichier_Csv_2_Json"), orderLines.readAll());
 		}
 		 catch (Exception e)
 		{
 			 e.printStackTrace();
 		}
 		;
-		 
 	}
 
 }

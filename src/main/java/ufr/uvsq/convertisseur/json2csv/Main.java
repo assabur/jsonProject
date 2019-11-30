@@ -9,15 +9,50 @@ public class Main {
 
 	public static void main(String[] args)
 	{
+		int test=0;
+	
+		do
+	{
+		//Show.menu();
+		int choice=Show.menu();		
 		
-		System.out.println("Entrez le chemin absolu du fichier JSON");
+		switch (choice) {
+	        case 1:
+			     {	   
+			    	    System.out.println("Entrez le chemin absolu du fichier JSON");			    		
+			    		sc =new Scanner(System.in);		
+			    		String chemin=sc.nextLine();		
+			    		Convertisseur converter =new Convertisseur();	    		
+			    		converter.to_csv(chemin);
+			    		System.out.println("Operation terminée");
+			    		Show.suite();
+			    		test= Show.suite();
+	        	 }
+	            break; 
+	        case 2:
+	        	{	   
+			    	   /* System.out.println("Entrez le chemin absolu du fichier CSV");			    		
+			    		sc =new Scanner(System.in);		
+			    		String chemin=sc.nextLine();	*/	
+			    		Convertisseur converter =new Convertisseur();	    		
+			    		converter.to_json();
+			    		System.out.println("Operation terminée");
+			    		Show.suite();
+			    		test= Show.suite();
+	        	}
+	            break;
+	        case 3:
+	        	
+	            System.exit(0);
+	       
+	        default:
+			        	System.out.println("Votre choix ne se trouve pas dans le menu/n! ");
+			        	Show.suite();
+			    		test= Show.suite();
 		
-		sc =new Scanner(System.in);		
-		String chemin=sc.nextLine();		
-		Convertisseur converter =new Convertisseur();
-		
-		converter.to_csv(chemin);		
-		
+	    }
+	} while(test==1);
+	
 	}
 
 }
