@@ -12,9 +12,7 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 public class Convertisseur
 
 {
-	
-
-   
+ 
 	
 	  public void to_csv (String chemin) 
 	{
@@ -49,14 +47,14 @@ public class Convertisseur
 		{
 			CsvSchema orderLineSchema = CsvSchema.emptySchema().withHeader();
 			CsvMapper csvMapper = new CsvMapper();
-			MappingIterator<OrderLine> orderLines = csvMapper.readerFor(OrderLine.class)
+			MappingIterator<Structure> Structure= csvMapper.readerFor(Structure.class)
 			  .with(orderLineSchema)
 			  .readValues(new File(chemin));
 			
 			
 			new ObjectMapper()
 			  .configure(SerializationFeature.INDENT_OUTPUT, true)
-			  .writeValue(new File("src/main/ressources/Fichier_Csv_2_Json"), orderLines.readAll());
+			  .writeValue(new File("src/main/ressources/Fichier_Csv_2_Json"), Structure.readAll());
 		}
 		 catch (Exception e)
 		{

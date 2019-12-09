@@ -1,13 +1,16 @@
 package ufr.uvsq.convertisseur.json2csv;
 
 
+import java.io.IOException;
 import java.util.Scanner;
+
+import com.fasterxml.jackson.databind.JsonMappingException;
 
 public class Main {
 	
 	static Scanner sc;
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws IOException, JsonMappingException, IOException
 	{
 		int test=0;
 	
@@ -40,8 +43,19 @@ public class Main {
 			    		
 			    		test= Show.suite();
 	        	}
-	            break;
 	        case 3:
+        	{	   
+		    	    System.out.println("Entrez le chemin absolu du fichier JSON");			    		
+		    		sc =new Scanner(System.in);		
+		    		String chemin=sc.nextLine();	
+		    		To_Csv_With_Config converter =new To_Csv_With_Config();	    		
+		    		converter.config(chemin);
+		    		System.out.println("Operation terminée");
+		    		
+		    		test= Show.suite();
+        	}
+	            break;
+	        case 4:
 	        	
 	            System.exit(0);
 	       

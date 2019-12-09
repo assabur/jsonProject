@@ -17,14 +17,15 @@ public class Show
 		        System.out.println("◙◙◙-------◙◙◙-------◙◙◙\n");
 		        System.out.println("1 - Convertion JSON en CSV ");
 		        System.out.println("2 - Convertion CSV en JSON ");
-		        System.out.println("3 - Quitter");
+		        System.out.println("3 - Convertion en Mode Reformatage ");
+		        System.out.println("4 - Quitter");
 		        
 		        selection = input.nextInt();
 		        return selection;    
 		
 	}
 	
-	public static int suite()
+	public static int suite() //throws MonException
 	{
 		int selection;
 		Scanner input=new Scanner(System.in);
@@ -36,8 +37,9 @@ public class Show
 
 		selection = input.nextInt();
 		if(selection==0)
+		//throw new MonException();
 		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
-		System.out.println("◙◙◙ Aurevoir ◙◙◙  \n");
+		System.out.println("    Aurevoir   \n");
 		System.out.println("◙◙◙ ◙◙◙ ◙◙◙ ◙◙◙ ");
 		return selection;
 	}
