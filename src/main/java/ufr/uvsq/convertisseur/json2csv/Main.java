@@ -3,18 +3,26 @@ package ufr.uvsq.convertisseur.json2csv;
 
 import java.util.Scanner;
 
+import ufr.uvsq.convertisseur.Exceptions.*;
+
 public class Main {
 	
 	static Scanner sc;
 
-	public static void main(String[] args)
+	public static void main(String[] args) throws SaisiesExceptions,CheminsExceptions
 	{
-		int test=0;
+		int test=1;
 	
 		do
 	{
-		//Show.menu();
-		int choice=Show.menu();		
+		
+			int choice=0;
+			try{ 
+				
+				choice=Show.menu();
+				
+			}catch(SaisiesExceptions e){};
+				
 		
 		switch (choice) {
 	        case 1:
@@ -22,11 +30,14 @@ public class Main {
 			    	    System.out.println("Entrez le chemin absolu du fichier JSON");			    		
 			    		sc =new Scanner(System.in);		
 			    		String chemin=sc.nextLine();		
-			    		Convertisseur converter =new Convertisseur();	    		
-			    		converter.to_csv(chemin);
-			    		System.out.println("Operation terminÃ©e");
-			    		
-			    		test= Show.suite();
+			    		Convertisseur converter =new Convertisseur();
+			    		try{
+			    			converter.to_csv(chemin);
+			    			System.out.println("Operation terminée");
+			    			test= Show.suite();
+			    		}catch(Exception e){
+			    			
+			    		}
 	        	 }
 	            break; 
 	        case 2:
@@ -36,7 +47,7 @@ public class Main {
 			    		String chemin=sc.nextLine();	
 			    		Convertisseur converter =new Convertisseur();	    		
 			    		converter.to_json(chemin);
-			    		System.out.println("Operation terminÃ©e");
+			    		System.out.println("Operation terminée");
 			    		
 			    		test= Show.suite();
 	        	}
@@ -45,10 +56,10 @@ public class Main {
 	        	
 	            System.exit(0);
 	       
-	        default:
+	        /*default:
 			        	System.out.println("Votre choix ne se trouve pas dans le menu/n! ");
 			        	
-			    		test= Show.suite();
+			    		test= Show.suite();*/
 		
 	    }
 	} while(test==1);
