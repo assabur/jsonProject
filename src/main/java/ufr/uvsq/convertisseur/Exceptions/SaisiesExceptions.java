@@ -1,5 +1,10 @@
 package ufr.uvsq.convertisseur.Exceptions;
 
-public class SaisiesExceptions {
+public class SaisiesExceptions extends Exception {
+	
+	public SaisiesExceptions(){
+		System.out.println("Erreur de saisie ...");
+		
+	}
 
 }
