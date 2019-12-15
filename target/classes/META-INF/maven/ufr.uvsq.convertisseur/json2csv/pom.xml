@@ -81,29 +81,7 @@
         </configuration>
        
      </plugin>
-
-  <!-- SpotBugs est un programme pour trouver des bogues dans les programmes Java. I
-  l recherche des instances de «modèles de bogues» - des instances de code susceptibles
-   d'être des erreurs. -->
-  
-		 <!-- plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>3.1.12.3-SNAPSHOT</version>
-        <configuration>
-          <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile>
-          <includeFilterFile>spotbugs-include.xml</includeFilterFile>
-        </configuration>
-      </plugin-->
-
-
-	<!-- plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>3.1.12.3-SNAPSHOT</version>
-      </plugin-->  
-      
-      
+   
     <plugin>
       <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
